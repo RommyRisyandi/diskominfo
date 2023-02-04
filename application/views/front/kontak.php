@@ -2,8 +2,8 @@
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Contact Us</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <h2 class="mb-4">Kontak</h2>
+            <p></p>
           </div>
         </div>
         <div class="row d-flex contact-info mb-5">
@@ -31,7 +31,7 @@
                     <span class="icon-paper-plane"></span>
                 </div>
                 <h3 class="mb-4">ALAMAT E-MAIL</h3>
-                <p><a href="mailto:kominfo@singkawangkota.go.id">kominfo@singkawangkota.go.id</a></p>
+                <p><a href="mailto:kominfo@singkawangkota.go.id">kominfo@singkawang kota.go.id</a></p>
               </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -47,5 +47,3 @@
         
       </div>
     </section>
-
-    

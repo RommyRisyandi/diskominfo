@@ -7,53 +7,48 @@
                         <div class="header">
                             <h2>
                                 Tambah Data E-Sakip
-                            </h2>
-                            
+                            </h2> 
                         </div>
+                        <?php echo form_open_multipart('back/atambah_e', 'class="form-horizontal"'); ?>
                         <div class="body">
                             <div class="row clearfix">
                                 <div class="col-sm-12">
-                                    <div class="form-group form-float form-group-lg">
-                                        <div class="form-line">
-                                            <input type="text" class="form-control" />
-                                            <label class="form-label">Nama File</label>
-                                        </div>
+                                <?php 
+                                    // Notifikasi
+                                    if($this->session->flashdata('gagal')) {
+                                        echo '<p class="alert alert-danger">';
+                                        echo $this->session->flashdata('gagal');
+                                    }
+                                ?> 
+                                    <div class="col-sm-12">
+                                <div class="input-group">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="judul" placeholder="Masukan Nama File...." required autofocus>
                                     </div>
-                                    <b>Tanggal Post</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">date_range</i>
-                                            </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control datetime" placeholder="Cth: 30/07/2019 23:59">
-                                            </div>
-                                        </div>
-
-                             <h2 class="card-inside-title">Upload Data</h2>
-                            <div class="body">
-                            <form action="/" id="frmFileUpload" class="dropzone" method="post" enctype="multipart/form-data">
-                                <div class="dz-message">
-                                    <div class="drag-icon-cph">
-                                        <i class="material-icons">touch_app</i>
-                                    </div>
-                                    <h3>Drop files here or click to upload.</h3>
-                                    <em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em>
                                 </div>
-                                <div class="fallback">
-                                    <input name="file" type="file" multiple />
                                 </div>
-                            </form>
-                        </div>
 
-                         <button type="button" class="btn bg-indigo waves-effect">
+                                <div class="col-md-12">
+                                <h2 class="card-inside-title">Data E-Sakip</h2>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">description</i>
+                                    </span>
+                                
+                                    <div class="form-line">
+                                    <input type="file" class="form-control" name="userfile" placeholder="Masukan File E-Sakip" required autofocus>
+                                </div>
+                                </div>
+
+                                <button type="submit" name="submit" class="btn bg-indigo waves-effect">
                                     <i class="material-icons">save</i>
                                     <span>SIMPAN</span>
                                 </button>
                                 </div>
                             </div>
-
-                            
+                                </div> 
                         </div>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>

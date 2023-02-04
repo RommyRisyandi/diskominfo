@@ -9,28 +9,12 @@
                                 <img src="<?php echo base_url();?>/assets2/images/user-lg.jpg" alt="AdminBSB - Profile Image" />
                             </div>
                             <div class="content-area">
-                                <h3>Marc K. Hammond</h3>
-                                <p>Web Software Developer</p>
-                                <p>Administrator</p>
+                                <h3><?php echo $this->session->userdata('nama') ?></h3>
+                                <p><?php echo $this->session->userdata('akses_level') ?></p>
+                                
                             </div>
                         </div>
-                        <div class="profile-footer">
-                            <ul>
-                                <li>
-                                    <span>Followers</span>
-                                    <span>1.234</span>
-                                </li>
-                                <li>
-                                    <span>Following</span>
-                                    <span>1.201</span>
-                                </li>
-                                <li>
-                                    <span>Friends</span>
-                                    <span>14.252</span>
-                                </li>
-                            </ul>
-                            
-                        </div>
+                        
                     </div>
 
                 </div>
@@ -50,7 +34,7 @@
                                                 <label for="NameSurname" class="col-sm-2 control-label">Nama</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        <input type="text" class="form-control" id="NameSurname" name="NameSurname" placeholder="Name Surname" value="Marc K. Hammond" required>
+                                                        <input type="text" class="form-control" id="NameSurname" name="nama" placeholder="Nama" value="Marc K. Hammond" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -58,25 +42,25 @@
                                                 <label for="Email" class="col-sm-2 control-label">Email</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        <input type="email" class="form-control" id="Email" name="Email" placeholder="Email" value="example@example.com" required>
+                                                        <input type="email" class="form-control" id="Email" name="email" placeholder="Email" value="example@example.com" required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">Experience</label>
+                                                <label for="InputExperience" class="col-sm-2 control-label">Username</label>
 
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        <textarea class="form-control" id="InputExperience" name="InputExperience" rows="3" placeholder="Experience"></textarea>
+                                                        <textarea class="form-control" id="InputExperience" name="username" rows="3" placeholder="Username"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="InputSkills" class="col-sm-2 control-label">Skills</label>
+                                                <label for="InputSkills" class="col-sm-2 control-label">password</label>
 
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        <input type="text" class="form-control" id="InputSkills" name="InputSkills" placeholder="Skills">
+                                                        <input type="text" class="form-control" id="InputPassword" name="password" placeholder="Password">
                                                     </div>
                                                 </div>
                                             </div>

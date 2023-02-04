@@ -28,19 +28,33 @@
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">Admin<b>BSB</b></a>
-            <small>Admin BootStrap Based - Material Design</small>
+            <a href="javascript:void(0);">DISKOMINFO</a>
+            <small></small>
         </div>
         <div class="card">
             <div class="body">
+                <?php echo form_open('login/proseslogin'); ?>
                 <form id="sign_in" method="POST">
-                    <div class="msg">Sign in to start your session</div>
+                    <div class="msg">Silahkan Login Terlebih Dulu!</div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="row clearfix">
+                                <div class="col-sm-12">  
+                                    <?php if(isset($pesan)){
+                                        echo '<p class="alert alert-danger">';
+                                        echo $pesan;  
+                                        } ?>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">mail</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+                            <input type="text" class="form-control" name="email" placeholder="E-mail" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">
@@ -53,10 +67,11 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-4">
-                            <button class="btn btn-block bg-indigo waves-effect" type="submit">SIGN IN</button>
+                            <button class="btn btn-block bg-indigo waves-effect" type="submit">Masuk</button>
                         </div>
                     </div>
                 </form>
+                <?php echo form_close(); ?>
             </div>
         </div>
     </div>

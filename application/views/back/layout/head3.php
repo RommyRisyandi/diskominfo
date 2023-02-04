@@ -18,40 +18,12 @@
     <!-- Waves Effect Css -->
     <link href="<?php echo base_url();?>/assets2/plugins/node-waves/waves.css" rel="stylesheet" />
 
-    <!-- Animation Css -->
-    <link href="<?php echo base_url();?>/assets2/plugins/animate-css/animate.css" rel="stylesheet" />
-
-     <!-- Colorpicker Css -->
-    <link href="<?php echo base_url(); ?>/assets2/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
-
-    <!-- Dropzone Css -->
-    <link href="<?php echo base_url(); ?>/assets2/plugins/dropzone/dropzone.css" rel="stylesheet">
-
-    <!-- Multi Select Css -->
-    <link href="<?php echo base_url(); ?>/assets2/plugins/multi-select/css/multi-select.css" rel="stylesheet">
-
-    <!-- Bootstrap Spinner Css -->
-    <link href="<?php echo base_url(); ?>/assets2/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
-
-    <!-- Bootstrap Tagsinput Css -->
-    <link href="<?php echo base_url(); ?>/assets2/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
-
-    <!-- Bootstrap Material Datetime Picker Css -->
-    <link href="<?php echo base_url(); ?>/assets2/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
-
-    <!-- Bootstrap DatePicker Css -->
-    <link href="<?php echo base_url(); ?>/assets2/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
-
-    <!-- Wait Me Css -->
-    <link href="<?php echo base_url(); ?>/assets2/plugins/waitme/waitMe.css" rel="stylesheet" />
-
     <!-- Bootstrap Select Css -->
     <link href="<?php echo base_url(); ?>/assets2/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
-
-    <!-- Sweet Alert Css -->
-    <link href="<?php echo base_url();?>/assets2/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
-
-    <!-- noUISlider Css -->
+    
+    <!-- Animation Css -->
+    <link href="<?php echo base_url();?>/assets2/plugins/animate-css/animate.css" rel="stylesheet" />
+    
     <link href="<?php echo base_url(); ?>/assets2/plugins/nouislider/nouislider.min.css" rel="stylesheet" />
 
     <!-- Custom Css -->

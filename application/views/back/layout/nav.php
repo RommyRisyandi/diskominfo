@@ -7,14 +7,14 @@
                     <img src="<?php echo base_url(); ?>/assets2/images/user.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                    <div class="email">john.doe@example.com</div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $this->session->userdata('nama') ?></div>
+                    <div class="email"><?php echo $this->session->userdata('email') ?></div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
                             <li><a href="<?php echo site_url('back/edit_profil'); ?>"><i class="material-icons">person</i>Profile</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="<?php echo site_url('back/logout'); ?>"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="<?php echo site_url('back/logout'); ?>"><i class="material-icons">input</i>Logout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2019 <a href="javascript:void(0);">Dinas Komunikasi dan Informatika</a>.
+                    &copy; 2023 <a href="javascript:void(0);">Dinas Komunikasi dan Informatika</a>.
                 </div>
             </div>
             <!-- #Footer -->

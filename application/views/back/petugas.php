@@ -10,11 +10,23 @@
                 </h2>
             </div>
             <div class="body">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <?php
+                        // Notifikasi
+                        if($this->session->flashdata('sukses')) {
+                            echo '<p class="alert alert-success">';
+                            echo $this->session->flashdata('sukses');
+                            
+                        }
+                        ?>
+                    </div>
+                </div>
                 <div class="form-group">
-                 <button type="button" class="btn btn-success waves-effect">
+                <a href="<?php echo site_url('back/tambah_p'); ?>"><button type="button" class="btn btn-success waves-effect">
                         <i class="material-icons">add</i>
                         <span>Tambah Petugas</span>
-                </button>
+                </button></a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
@@ -25,24 +37,19 @@
                                 <th>Posisi/Akses Level</th>
                                 <th>E-Mail</th>
                                 <th>Username</th>
-                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $no = 1;
+                            foreach ($petugas as $row => $r) { ?>
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td> <button type="button" class="btn btn-warning waves-effect">
-                                    <i class="material-icons">edit</i>
-                                </button>
-                                 <button type="button" class="btn btn-danger waves-effect">
-                                    <i class="material-icons">delete</i>
-                                </button>
-                            </td>
+                                <td><?php echo $no++; ?></td>
+                                <td><?php echo $r->nama; ?></td>
+                                <td><?php echo $r->akses_level; ?></td>
+                                <td><?php echo $r->email; ?></td>
+                                <td><?php echo $r->username; ?></td>
                             </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

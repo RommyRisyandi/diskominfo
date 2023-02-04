@@ -8,69 +8,61 @@
                             <h2>
                                 Tambah Berita
                             </h2>
-                            
-                        </div>
+                            </div>
+                           <?php echo form_open_multipart('back/atambah_b', 'class="form-horizontal"'); ?> 
                         <div class="body">
                             <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <?php 
+                                // Notifikasi
+                                if($this->session->flashdata('gagal')) {
+                                    echo '<p class="alert alert-danger">';
+                                    echo $this->session->flashdata('gagal');
+                                }
+                                ?>  
+                            </div>
+                            <div class="row-clearfix">
                                 <div class="col-sm-12">
-                                    <div class="form-group form-float form-group-lg">
-                                        <div class="form-line">
-                                            <input type="text" class="form-control" />
-                                            <label class="form-label">Judul Berita</label>
-                                        </div>
+                                <div class="input-group">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="judul" placeholder="Masukan Judul..." required autofocus>
                                     </div>
-                                    <b>Tanggal Post</b>
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="material-icons">date_range</i>
-                                            </span>
-                                            <div class="form-line">
-                                                <input type="text" class="form-control datetime" placeholder="Cth: 30/07/2019 23:59">
-                                            </div>
-                                        </div>
-
+                                </div>
+                                </div>
+                                <div class="col-sm-12">
                                     <p>
                                         <b>Jenis Berita</b>
                                     </p>
-                                    <select class="form-control show-tick">
-                                        <option>Mustard</option>
-                                        <option>Ketchup</option>
-                                        <option>Relish</option>
+                                    <select class="form-control show-tick" name="jenis">
+                                        <option value="Berita">Berita</option>
+                                        <option value="Siaran Pers">Siaran Pers</option>
+                                        <option value="Infografis">Infografis</option>
                                     </select>
-
-                            <h2 class="card-inside-title">Isi Berita</h2>
-                            <div class="row clearfix">
+                                </div>
+                                
+                                
                                 <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <textarea rows="4" class="form-control no-resize" placeholder="Masukkan isi berita..."></textarea>
-                                        </div>
-                                    </div>
+                                    <h2 class="card-inside-title">Isi Berita</h2>
+                                        <textarea id="ckeditor"  name="isi" required autofocus></textarea>
                                 </div>
-                            </div>
-
-                             <h2 class="card-inside-title">Foto Berita</h2>
-                            <div class="body">
-                            <form action="/" id="frmFileUpload" class="dropzone" method="post" enctype="multipart/form-data">
-                                <div class="dz-message">
-                                    <div class="drag-icon-cph">
-                                        <i class="material-icons">touch_app</i>
-                                    </div>
-                                    <h3>Drop files here or click to upload.</h3>
-                                    <em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em>
+                            
+                                <div class="col-md-12">
+                                <h2 class="card-inside-title">Foto Berita</h2>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">images</i>
+                                    </span>
+                                <div class="form-line">
+                                    <input type="file" class="form-control" name="userfile" placeholder="Masukan File Foto/Gambar..." required autofocus>
                                 </div>
-                                <div class="fallback">
-                                    <input name="file" type="file" multiple />
                                 </div>
-                            </form>
-                        </div>
-
-                         <button type="button" class="btn bg-indigo waves-effect">
-                                    <i class="material-icons">save</i>
-                                    <span>SIMPAN</span>
-                                </button>
-                                </div>
-                            </div>
+                        <button type="submit" name="submit" class="btn bg-indigo waves-effect">
+                            <i class="material-icons">save</i>
+                            <span>SIMPAN</span>
+                        </button>
+                    </div>
+                </div>
+                <?php echo form_close(); ?>
 
                             
                         </div>

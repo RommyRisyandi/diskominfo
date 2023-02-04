@@ -31,9 +31,6 @@
     <script src="<?php echo base_url();?>/assets2/plugins/raphael/raphael.min.js"></script>
     <script src="<?php echo base_url();?>/assets2/plugins/morrisjs/morris.js"></script>
 
-    <!-- ChartJs -->
-    <script src="<?php echo base_url();?>/assets2/plugins/chartjs/Chart.bundle.js"></script>
-
     <!-- Flot Charts Plugin Js -->
     <script src="<?php echo base_url();?>/assets2/plugins/flot-charts/jquery.flot.js"></script>
     <script src="<?php echo base_url();?>/assets2/plugins/flot-charts/jquery.flot.resize.js"></script>
@@ -47,7 +44,7 @@
     <!-- Custom Js -->
     <script src="<?php echo base_url();?>/assets2/js/admin.js"></script>
     <script src="<?php echo base_url();?>/assets2/js/pages/index.js"></script>
-     <script src="<?php echo base_url();?>/assets2/js/pages/tables/jquery-datatable.js"></script>
+    <script src="<?php echo base_url();?>/assets2/js/pages/tables/jquery-datatable.js"></script>
     <!-- Demo Js -->
     <script src="<?php echo base_url();?>/assets2/js/demo.js"></script>
     

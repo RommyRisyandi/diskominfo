@@ -8,58 +8,66 @@
                             <h2>
                                 Tambah Petugas Admin
                             </h2>
-                            
                         </div>
+                        <?php echo form_open_multipart('back/atambah_p', 'class="form-horizontal"'); ?>
                         <div class="body">
                             <div class="row clearfix">
                                 <div class="col-sm-12">
-                                    <div class="form-group form-float form-group-lg">
+                                    <?php 
+                                    // Notifikasi
+                                    if($this->session->flashdata('gagal')) {
+                                        echo '<p class="alert alert-danger">';
+                                        echo $this->session->flashdata('gagal');
+                                    }
+                                    ?>  
+                                </div>
+
+                                <div class="col-sm-12">
+                                   <div class="input-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" />
-                                            <label class="form-label">Nama Petugas</label>
+                                            <input type="text" class="form-control" name="nama" placeholder="Masukan Nama..." required autofocus>
                                         </div>
                                     </div>
-                                    <div class="form-group form-float">
+                                   <div class="input-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" />
-                                            <label class="form-label">E-mail</label>
+                                            <input type="email" class="form-control" name="email" placeholder="Masukan E-Mail..." required autofocus>
                                         </div>
                                     </div>
-                                     <div class="form-group form-float">
+                                   <div class="input-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control">
-                                            <label class="form-label">Username</label>
+                                            <input type="text" class="form-control" name="username" placeholder="Masukan Username..." required autofocus>
                                         </div>
                                     </div>
-                                    <div class="form-group form-float">
+                                   <div class="input-group">
                                         <div class="form-line">
-                                            <input type="password" class="form-control">
-                                            <label class="form-label">Password</label>
+                                            <input type="password" class="form-control" name="password" placeholder="Masukan Password..." required autofocus>
+                                        </div>
+                                        
+                                            <input type="hidden" class="form-control" name="akses_level" value="petugas" placeholder="Masukan Akses Level..." required autofocus>
+                                        
+                                    </div>
+                                   
+                                    <div class="col-md-12">
+                                        <h2 class="card-inside-title">Foto Petugas (Optional)</h2>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">images</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="file" class="form-control" name="userfile" placeholder="Masukan File Foto/Gambar...">
                                         </div>
                                     </div>
-                              
-                              <div class="form-group form-float">
-                             <p>
-                                        <b>Akses Level</b>
-                                    </p>
-                                    <select class="form-control show-tick">
-                                        <option>Mustard</option>
-                                        <option>Ketchup</option>
-                                        <option>Relish</option>
-                                    </select>
-                            </div>
                             
-                          <div class="form-group ">
-                         <button type="button" class="btn bg-indigo waves-effect">
+                            <div class="form-group ">
+                                <button type="submit" name="submit" class="btn bg-indigo waves-effect">
                                     <i class="material-icons">save</i>
                                     <span>SIMPAN</span>
                                 </button>
-                              </div>
+                            </div>
 
                                 </div>
                             </div>
-
-                            
+                        <?php echo form_close(); ?>
                         </div>
                     </div>
                 </div>

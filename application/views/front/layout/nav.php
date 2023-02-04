@@ -13,7 +13,7 @@
                             <span class="text">kominfo@singkawangkota.go.id</span>
                         </div>
                         <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
-                            <p class="mb-0 register-link"><a href="#" class="mr-3">Sign Up</a><a href="#">Sign In</a></p>
+                            <p class="mb-0 register-link"><a href="<?php echo site_url('front/login'); ?>">Sign In</a></p>
                         </div>
                     </div>
                 </div>

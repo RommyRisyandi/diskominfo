@@ -10,11 +10,23 @@
                 </h2>
             </div>
             <div class="body">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <?php
+                        // Notifikasi
+                        if($this->session->flashdata('sukses')) {
+                            echo '<p class="alert alert-success">';
+                            echo $this->session->flashdata('sukses');
+                            
+                        }
+                        ?>
+                    </div>
+                </div>
                 <div class="form-group">
-                 <button type="button" class="btn btn-success waves-effect">
+                 <a href="<?php echo site_url('back/tambah_b'); ?>"><button type="button" class="btn btn-success waves-effect">
                         <i class="material-icons">add</i>
                         <span>Tambah Berita</span>
-                </button>
+                </button></a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
@@ -29,20 +41,25 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $no = 1;
+                            foreach ($berita as $row => $r) { ?>
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>  <button type="button" class="btn btn-warning waves-effect">
+                                <td><?php echo $no++; ?></td>
+                                <td><?php echo $r->nama; ?></td>
+                                <td><?php echo $r->judul; ?></td>
+                                <td><?php echo $r->jenis; ?></td>
+                                <td><?php echo $r->tanggal_post; ?></td>
+                                <td><a href="<?php echo site_url('back/edit_b/').$r->id_berita?>"><button type="button" class="btn btn-warning waves-effect">
                                     <i class="material-icons">edit</i>
-                                </button>
-                                 <button type="button" class="btn btn-danger waves-effect">
+                                    </button></a>
+                                    <a href="<?php echo site_url('back/hapus_b/').$r->id_berita ?>"
+                                    onClick="return confirm('apakah anda yakin ingin menghapus Data ini?')">
+                                    | <button type="button" class="btn btn-danger waves-effect">
                                     <i class="material-icons">delete</i>
-                                </button>
-                            </td>
+                                    </button></a>
+                                </td>
                             </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
