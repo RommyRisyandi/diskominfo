@@ -26,7 +26,7 @@
                                     
                                     <li role="presentation"><a href="#profile_settings" aria-controls="settings" role="tab" data-toggle="tab">Profile Settings</a></li>
                                 </ul>
-
+                                <?php echo form_open_multipart('back/aedit_profil', 'class="form-horizontal"'); ?> 
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane fade in active" id="profile_settings">
                                         <form class="form-horizontal">
@@ -34,7 +34,7 @@
                                                 <label for="NameSurname" class="col-sm-2 control-label">Nama</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        <input type="text" class="form-control" id="NameSurname" name="nama" placeholder="Nama" value="Marc K. Hammond" required>
+                                                        <input type="text" class="form-control" id="NameSurname" name="nama" placeholder="Nama" value="<?php echo $r->nama; ?>" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -42,7 +42,7 @@
                                                 <label for="Email" class="col-sm-2 control-label">Email</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        <input type="email" class="form-control" id="Email" name="email" placeholder="Email" value="example@example.com" required>
+                                                        <input type="email" class="form-control" id="Email" name="email" placeholder="Email" value="<?php echo $r->email; ?>" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -51,7 +51,7 @@
 
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        <textarea class="form-control" id="InputExperience" name="username" rows="3" placeholder="Username"></textarea>
+                                                        <textarea class="form-control" id="InputExperience" name="username" rows="3" placeholder="<?php echo $r->username; ?>"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -60,25 +60,20 @@
 
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        <input type="text" class="form-control" id="InputPassword" name="password" placeholder="Password">
+                                                        <input type="text" class="form-control" id="InputPassword" name="password" placeholder="<?php echo $r->password; ?>">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <div class="col-sm-offset-2 col-sm-10">
-                                                    <input type="checkbox" id="terms_condition_check" class="chk-col-red filled-in" />
-                                                    <label for="terms_condition_check">I agree to the <a href="#">terms and conditions</a></label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-2 col-sm-10">
-                                                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                                                    <button type="submit" name="submit" class="btn btn-primary">SIMPAN</button>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
+                                <?php echo form_close(); ?>
                             </div>
                         </div>
                     </div>

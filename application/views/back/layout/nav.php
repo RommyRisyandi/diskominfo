@@ -64,7 +64,17 @@
                             </li>
                         </ul>
                     </li>
-                    
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">settings</i>
+                            <span>Konfigurasi</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="<?php echo site_url('back/edit_slider/'.$r->id_slider ); ?>"> <i class="material-icons">image</i><span>Konfigurasi Slider</span></a>
+                            </li>
+                        </ul>
+                    </li>
     
             </div>
             <!-- #Menu -->

@@ -104,6 +104,7 @@ class diskominfo extends CI_Model {
         return $query->result();
     }
 
+    // fungsi mendownload file
     public function download($id_esakip)
 	{
 		
@@ -111,6 +112,29 @@ class diskominfo extends CI_Model {
 		return $query->row_array();
 	}
 
+    // listing konfigurasi slider
+    public function listing()
+	{
+		$query = $this->db->get('slider');
+		return $query->row();
+	}
+
+    public function edit($data)
+	{
+		$this->db->where('id_slider', $data['id_slider']);
+		$this->db->update('slider', $data);
+	}
+    
+    // listing konfigurasi profil
+    public function detail($id_petugas)
+	{
+		$this->db->select('*');
+		$this->db->from('petugas');
+		$this->db->where('id_petugas', $id_petugas);
+		$this->db->order_by('id_petugas', 'desc');
+		$query = $this->db->get();
+		return $query->row();
+	}
 }
 
 /* End of file modelName.php */

@@ -34,7 +34,7 @@ class Back extends CI_Controller {
 
 		$data['title'] = "Ubah Profil | Dinas Komunikasi dan Informatika Kota Singkawang";
 		$data['r'] = $this->diskominfo->select('petugas', array('id_petugas' => $id_petugas))->row();
-		$this->data['diskominfo'] = $this->db->get('berita')->result_array();
+		$this->data['diskominfo'] = $this->db->get('petugas')->result_array();
 		$this->load->view('back/layout/head3', $data);
 		$this->load->view('back/layout/header');
 		$this->load->view('back/layout/nav');
@@ -226,7 +226,66 @@ class Back extends CI_Controller {
 	}
 	// End Berita
 	
-	
+	// Slider Tunggal
+
+	public function edit_slider($id_slider)
+	{
+		$data['title'] = "Konfigurasi Slider | Dinas Komunikasi dan Informatika Kota Singkawang";
+		$slider = $this->diskominfo->listing();
+		$this->data['diskominfo'] = $this->db->get('slider')->result_array();
+		$this->load->view('back/layout/head3', $data);
+		$this->load->view('back/layout/header');
+		$this->load->view('back/layout/nav');
+		$this->load->view('back/edit_slider');
+		$this->load->view('back/layout/footer3');
+	}
+
+	public function aedit_slider()
+	{
+		$config['upload_path'] 		= './assets/upload/slider/';
+      	$config['allowed_types'] 	= 'gif|jpg|jpeg|png';
+      	$config['max_size']  		= '8000';// dalam KB
+      	$config['max_width']  		= '8000';
+      	$config['max_height']  		= '8000';
+      
+      	$this->load->library('upload', $config);
+		
+		if(!$this->upload->do_upload()){
+      	$this->session->set_flashdata('gagal', 'Mohon Maaf Upload Gambar Gagal, Silahkan Coba Lagi!(Max:8mb)');
+		$slider = $this->diskominfo->listing();
+		$this->data['diskominfo'] = $this->db->get('slider')->result_array();
+		redirect('back/edit_slider','refresh', $data);
+
+		}else{
+		$slider = array('upload_data' => $this->upload->data());
+		// Create Thumbnail Gambar
+		$config['image_library'] = 'gd2';
+		$config['source_image'] = './assets/upload/slider/'.$slider['upload_data']['file_name'];
+		// Lokasi Folder Thumbnail
+		$config['new_image'] = './assets/upload/slider/thumbs/'; 
+		$config['create_thumb'] = TRUE;
+		$config['maintain_ratio'] = TRUE;
+		$config['width'] = 250; //pixel
+		$config['height'] = 250; //pixel
+		$config['thumb_marker'] ='';
+
+	   $this->load->library('image_lib', $config);
+
+	   $this->image_lib->resize();
+	   $id_berita = array('id_slider' => $this->input->post('id_slidera'));
+	   $data = array(
+		'id_slider'		=> $this->input->post('id_slider'),
+		'judul'      	=> $this->input->post('judul'),
+		'slider'       	=> $slider['upload_data']['file_name']);
+		$query = $this->diskominfo->update('slider', $data, $id_berita);
+		$this->session->set_flashdata('sukses', 'Slider Berhasil diubah!');
+		redirect('back/edit_slider','refresh');
+		
+		}
+		
+	}
+
+	// End Slider Tunggal
 	
 	
 	// E-Sakip
